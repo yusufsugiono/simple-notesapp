@@ -1,0 +1,9 @@
+<!doctype html>
+<html t:type="layout" title="Notes App"
+        xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+<body>
+<p>Gagal menampilkan catatan. Catatan masih kosong.</p>
+</body>
+</html>

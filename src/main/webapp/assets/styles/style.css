@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    padding: 12px;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+main > p {
+    text-align: center;
+    font-weight: bolder;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+}
