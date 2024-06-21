@@ -1,0 +1,17 @@
+<!doctype html>
+<html t:type="layout" title="Notes App"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+<body>
+<div class="row">
+    <h2 class="note-title">${note.title}</h2>
+    <p class="note-created text-secondary">${note.createdAt}</p>
+    <p class="note-body">${note.body}</p>
+</div>
+
+<t:pagelink page="EditNote" class="edit-btn" context="${note.id}"><i class="fa-solid fa-pencil"></i></t:pagelink>
+<!--<a class="delete-btn"><i class="fa-solid fa-trash-can"></i></a>-->
+<t:eventlink t:event="delete" class="delete-btn" t:context="${note.id}"><i class="fa-solid fa-trash-can"></i></t:eventlink>
+</body>
+</html>

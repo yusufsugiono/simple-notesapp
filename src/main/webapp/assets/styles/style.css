@@ -9,13 +9,100 @@ body {
     padding: 12px;
 }
 
-h1 {
+body > header > h1 {
+    cursor: pointer;
+}
+
+h1, form label {
     font-weight: bold;
+}
+
+form, form button{
+    font-size: 1.5rem;
+}
+
+.note-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.note-body {
+    margin-top: 20px;
 }
 
 main > p {
     text-align: center;
     font-weight: bolder;
+}
+
+.card {
+    font-family: 'Inter', sans-serif;
+    min-height: 250px;
+}
+
+.card-title {
+    font-weight: bolder;
+}
+
+.add-btn,
+.add-btn:hover,
+.add-btn:active,
+.add-btn:visited,
+.add-btn:link,
+.edit-btn,
+.edit-btn:hover,
+.edit-btn:active,
+.edit-btn:visited,
+.edit-btn:link,
+.delete-btn,
+.delete-btn:hover,
+.delete-btn:active,
+.delete-btn:visited,
+.delete-btn:link{
+    display: block;
+    border: none;
+    text-decoration: none;
+    border-radius: 25px;
+    color: #fff;
+    background-color: black;
+    position: fixed;
+    right: 3vw;
+    bottom: 3vw;
+    height: 50px;
+    width: 50px;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 2px;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.3);
+}
+
+.edit-btn,
+.edit-btn:hover,
+.edit-btn:active,
+.edit-btn:visited,
+.edit-btn:link {
+    right: 102px;
+}
+
+.edit-btn:hover{
+    color: cadetblue;
+    transition: .5s;
+}
+
+.delete-btn,
+.delete-btn:hover,
+.delete-btn:active,
+.delete-btn:visited,
+.delete-btn:link {
+    right: 44px;
+}
+
+.delete-btn:hover{
+    color: firebrick;
+    transition: .5s;
 }
 
 @media (max-width: 768px) {

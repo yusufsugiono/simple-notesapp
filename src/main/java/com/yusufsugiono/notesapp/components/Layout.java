@@ -6,7 +6,7 @@ import org.apache.tapestry5.BindingConstants;
 /**
  * Layout component for pages of application notesapp.
  */
-@Import(stylesheet = "context:assets/styles/style.css")
+@Import(stylesheet = "context:assets/styles/style.css", library = "context:assets/scripts/script.js")
 public class Layout
 {
     /**

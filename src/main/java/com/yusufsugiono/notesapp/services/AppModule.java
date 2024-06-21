@@ -3,14 +3,12 @@ package com.yusufsugiono.notesapp.services;
 import java.io.IOException;
 
 import org.apache.tapestry5.*;
+import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
 import org.apache.tapestry5.ioc.annotations.Local;
-import org.apache.tapestry5.services.Request;
-import org.apache.tapestry5.services.RequestFilter;
-import org.apache.tapestry5.services.RequestHandler;
-import org.apache.tapestry5.services.Response;
+import org.apache.tapestry5.services.*;
 import org.slf4j.Logger;
 
 /**
@@ -21,7 +19,7 @@ public class AppModule
 {
     public static void bind(ServiceBinder binder)
     {
-        // binder.bind(MyServiceInterface.class, MyServiceImpl.class);
+         binder.bind(NoteService.class, NoteServiceImpl.class);
 
         // Make bind() calls on the binder object to define most IoC services.
         // Use service builder methods (example below) when the implementation
@@ -42,7 +40,7 @@ public class AppModule
     }
 
     public static void contributeApplicationDefaults(
-            MappedConfiguration<String, Object> configuration)
+            MappedConfiguration<String, String> configuration)
     {
         // Contributions to ApplicationDefaults will override any contributions to
         // FactoryDefaults (with the same key). Here we're restricting the supported
