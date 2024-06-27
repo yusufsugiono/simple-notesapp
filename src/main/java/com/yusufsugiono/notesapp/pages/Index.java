@@ -7,6 +7,7 @@ import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.slf4j.Logger;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Index {
@@ -24,6 +25,5 @@ public class Index {
 
     void setupRender() {
         this.notes = noteService.getNotes();
-        logger.info("Notes:" + this.notes.toString());
     }
 }

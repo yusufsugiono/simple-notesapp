@@ -1,5 +1,5 @@
 <!doctype html>
-<html t:type="layout" title="Notes App"
+<html t:type="layout" title="Home | Notes App"
         xmlns="http://www.w3.org/1999/xhtml"
       xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
       xmlns:p="tapestry:parameter">
@@ -16,7 +16,7 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">${note.title}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">${note.createdAt}</h6>
-                            <p class="card-text">${note.body}</p>
+                            <p class="card-text">${note.truncatedBody}</p>
                             <t:pagelink page="readnote" class="btn btn-dark mt-auto" context="${note.id}">Read More <i class="fa-solid fa-angles-right"></i></t:pagelink>
                         </div>
                     </div>

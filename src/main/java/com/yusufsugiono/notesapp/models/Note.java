@@ -29,6 +29,14 @@ public class Note {
         return body;
     }
 
+    public String getTruncatedBody() {
+        if (body.length() > 120) {
+            return body.substring(0, 120) + "...";
+        } else {
+            return body;
+        }
+    }
+
     public void setBody(String body) {
         this.body = body;
     }

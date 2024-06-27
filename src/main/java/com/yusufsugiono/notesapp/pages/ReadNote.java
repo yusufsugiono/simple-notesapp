@@ -21,7 +21,7 @@ public class ReadNote {
 
     void onActivate(Long id){
         this.id = id;
-        note = noteService.getNoteById(id);
+        this.note = noteService.getNoteById(id);
     }
 
     Long onPassivate(Long id){

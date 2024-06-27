@@ -2,8 +2,11 @@ package com.yusufsugiono.notesapp.pages;
 
 import com.yusufsugiono.notesapp.models.Note;
 import com.yusufsugiono.notesapp.services.NoteService;
+import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.corelib.components.Form;
+import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.slf4j.Logger;
 
@@ -23,6 +26,12 @@ public class EditNote {
 
     @Inject
     private Logger logger;
+
+    @InjectComponent
+    private Form form;
+
+    @Inject
+    private Messages messages;
 
     Object onActivate(){
         if (this.noteId == null) {
@@ -48,10 +57,22 @@ public class EditNote {
     }
 
     void onValidateFromForm(){
-        Note note = new Note();
-        note.setTitle(noteTitle);
-        note.setBody(noteBody);
-        noteService.updateNoteById(noteId, note);
+        if (noteTitle == null || noteTitle.trim().equals("")){
+            form.recordError(messages.get("noteTitle-required-message"));
+        } else if (noteTitle.length() > 28) {
+            form.recordError(messages.get("noteTitle-maxlength-message"));
+        }
+
+        if (noteBody == null || noteBody.trim().equals("")){
+            form.recordError(messages.get("noteBody-required-message"));
+        }
+
+        if (!form.getHasErrors()) {
+            Note note = new Note();
+            note.setTitle(noteTitle);
+            note.setBody(noteBody);
+            noteService.updateNoteById(noteId, note);
+        }
     }
 
     Object onSuccessFromForm(){

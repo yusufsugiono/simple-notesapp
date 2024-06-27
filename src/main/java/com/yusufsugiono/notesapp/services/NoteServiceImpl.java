@@ -34,7 +34,6 @@ public class NoteServiceImpl implements NoteService{
                 .ifPresent(n -> {
                     n.setTitle(note.getTitle());
                     n.setBody(note.getBody());
-                    System.out.println("Data Baru : " + n.toString());
                 });
     }
 

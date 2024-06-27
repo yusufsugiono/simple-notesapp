@@ -4,6 +4,40 @@
     box-sizing: border-box;
 }
 
+/* =================================================
+|| Override Tapestry styles in displaying error banners
+||
+*/
+
+.t-error-icon {
+    display: none;
+}
+
+form > .t-error > .t-banner {
+    all: unset !important;
+}
+
+form > .t-error > ul {
+    font-weight: normal;
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+}
+
+form > .t-error {
+    font-weight: bold;
+    position: relative !important;
+    padding: 0.75rem 1.25rem !important;
+    margin-bottom: 1rem !important;
+    border: 1px solid #f5c6cb !important;
+    border-radius: 0.25rem !important;
+    color: #721c24 !important;
+    background-color: #f8d7da !important;
+}
+
+/*
+||
+|| ================================================= */
+
 body {
     font-family: 'Inter', sans-serif;
     padding: 12px;
@@ -17,7 +51,7 @@ h1, form label {
     font-weight: bold;
 }
 
-form, form button{
+form > label, form button{
     font-size: 1.5rem;
 }
 
